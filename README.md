@@ -5,4 +5,4 @@ IMS2014
 Ahoj :)
 Joo, funguje to, nemáme problém :D
 
-README master
+README master pokračuje
