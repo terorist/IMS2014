@@ -2,6 +2,7 @@
 #define __LIBSIM_H__
 
 #include <map>
+#include <limits>
 #include "event.h"
 #include "process.h"
 #include "store.h"
@@ -13,9 +14,9 @@
 
   //Time stamps
   double TIME = 0;
-  double TIME_END = DOUBLE_MAX;
+  double TIME_END = std::numeric_limits<double>::max;
 
-  // Calendar
+  // Calendar -- TODO udelat strukturu - timeline, vyjmuty prvek z fronty zarizeni
   Timeline calendar;
   
   void run() {
