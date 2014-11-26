@@ -19,6 +19,18 @@
   // Calendar -- TODO udelat strukturu - timeline, vyjmuty prvek z fronty zarizeni
   Timeline calendar;
   
+  /**
+   * Initialize start time and end time
+   */
+  void init (double t0 = TIME, double t1 = TIME_END {
+    TIME = t0;
+    TIME_END = t1;
+    return;
+  }
+  
+  /**
+   * Main loop of calendar/simulator
+   */
   void run() {
     Event* actual;
     while (!calendar.empty()) {
