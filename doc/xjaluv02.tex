@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper,titlepage,final]{article}
+\usepackage[czech]{babel}
+\usepackage[left=1.5cm,text={17cm,24cm},top=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1, IL2]{fontenc}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily}
+
+% Hack: should be placed after hypperref; otherwise, there are no links
+\usepackage{multibib}   % Multiple bibliographies
+\newcites{My}{Selected Author's Publications}
+\usepackage[nottoc]{tocbibind} % Add bibbliographies into ToC
+
+\newcommand{\myuv}[1]{\quotedblbase #1\textquotedblleft}
+\usepackage{url}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+\usepackage{graphicx}
+ \usepackage[usenames,x11names,table]{xcolor} % Use colors in listings and figures
+\ifx\pdfoutput\undefined % not a pdflatex
+\else
+	\usepackage[pdftex]{hyperref}
+	\hypersetup{
+		unicode=true,
+		colorlinks=true,
+		plainpages=false,
+		pdftitle={Retargetable Analysis of Machine Code},
+		pdfauthor={Jakub Křoustek},
+		pdfsubject={PhD Thesis}, 
+		citecolor=DodgerBlue2,
+	}
+\fi
+
+\begin {document}
+\begin{titlepage}
+\begin{center}
+{\Large\textsc{Fakulta informačních technologií}}\\
+{\Large \textsc{Vysoké učení technické v Brně}}\\
+
+\begin{figure}[!h]
+ 	\centering
+	 \includegraphics[height=7cm]{fit-zp2.pdf}
+\end{figure}
+\vspace{\stretch{0.382}}
+
+{\Huge 1. Diskrétní simulátor řízený událostmi}\\
+\LARGE
+IMS projekt\\ 
+\vspace{\stretch{0.618}}
+\end{center}
+{\Large
+Vypracovali: Lenka Jalůvková (xjaluv02), Jiří Picek (xpicek01)} \\
+{\Large Dne: \today}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+\section{Úvod} \label{uvod}
+
+V této práci je řešena implementace diskrétního simulátoru pro modelování (\cite{peringer}, slajd 119) založeného na kalendáři událostí (\cite{peringer}, slajd 173). Chování tohoto simulátoru je předvedeno na dvou vybraných příkladech z democvičení předmětu IMS, vybrali jsme příklad Kravín a Vlek (\cite{demo1}, slajd 22 a 28).
+
+\subsection{Řešitelé a zdroje informací}
+
+Projekt vypracoval tým ve složení Lenka Jalůvková a Jiří Picek. Využili jsme znalosti nabyté na přednáškách a democvičeních předmětu IMS.
+
+\subsection{Experimentální ověřování validity modelu}
+
+Validita modelu byla ověřena podle modelů odprezentovaných v rámci democvičení předmětu IMS. Dále jsme validitu vybraných modelů ověřili za využití SIMLIBU (~\cite{priklady}~\texttt{kravin.cpp}, \texttt{lyzar.cpp}).
+ 
+\section{Rozbor tématu a použitých metod/technologií}
+
+Diskrétní simulátor modeluje systém jako diskrétní (nespojitou) posloupnost událostí v čase. Diskrétní simulace je tedy opakem simulace spojité, která kontinuálně zaznamenává dynamiku systému v čase. Spojitá simulace může být také označena jako simulace založená na činnostech. Čas je rozdělen na malé intervaly a stav systému je aktualizován na základě množiny činností, které se odehrávají v daném časovém intervalu. Protože diskrétní simulace nemusí zpracovávat každý časový interval, mohou běžet mnohem rychleji než odpovídající spojité simulace~\cite{simulace.info}. 
+
+\subsection{Použité postupy}
+
+Diskrétní simulátor je implementován v jazyce C++, který nám umožnil objektový vývoj.
+
+\subsection{Původ použitých metod/technologií}
+\section{Koncepce}
+ABSTRAKTNI popis programu bez nazvu trid.
+
+Hlavní komponentou diskrétního simulátoru je kalendář událostí, do kterého přidáváme nebo vyjímáme záznamy. Popsat Procesy, Zařízení, Obslužná linka??
+
+\subsection{Kalendář událostí}
+
+Kalendář událostí je uspořádaná datová struktura uchovávající aktivační záznamy budoucích událostí. Každá naplánovaná budoucí událost \emph{next event} má v kalendáři záznam obsahující položky $[(acttime_{i}, priority_{i}, event_{i}), \dots]$. Kalendář umožňuje výběr prvního záznamu s nejnižším aktivačním časem a vkládání/rušení aktivačních záznamů.
+
+Princip kalendáře událostí:
+\begin{lstlisting}
+Inicializace kalendare udalosti a modelu
+while(kalendar je neprazdny){
+          Vyjmi prvni aktivacni zaznam (AZ) z kalendare
+          if (acttime > T_END)
+              break; Ukonceni cyklu
+         Nastav cas na aktivacni cas acttime v AZ
+         Proved popis chovani udalosti event v AZ
+}
+cas = T_END; konec simulace
+\end{lstlisting}
+
+\section{Architektura simulačního modelu/simulátoru}
+
+Prvky simulátoru jsou implementovány v pěti hlavních třídách (\texttt{calendar.cpp}, \texttt{facility.cpp} ...). Tyto třídy jsou dále využívány pro simulaci, kterou najdeme v \texttt{simulation.cpp}? Níže jsou jednotlivé třídy popsány.
+
+\subsection{Kalendář událostí}
+\subsection{Fronta}
+\subsection{Obslužné linky}
+\subsection{Zařízení} 
+
+\section{Podstata simulačních experimentů a jejich průběh}
+\section{Shrnutí simulačních experimentů a závěr}
+
+\newpage
+
+\bibliographystyle{myplain}
+\bibliography{bibliography}
+
+%\section*{Použitá literatura} \label{literatura}
+%\begin{itemize}
+%\item [1] Karen R. Sollins, “The TFTP Protocol” IEN 133, 29.1.1980. [Online]. Dostupné z %\url{http://www.postel.org/ien/txt/ien133.txt}
+%\item [2] Karen R. Sollins, “The TFTP Protocol (revision 2)”RFC1350, 29.7.1992. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc1350}
+%\item [3] G. Malkin, Bay Networks, A. Harkin, “TFTP Option Extension” RFC2347, 1998. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc2347}
+%\item [4] G. Malkin, Bay Networks, A. Harkin, “TFTP Blocksize Option” RFC2348, 1998. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc2348}
+%\item [5] G. Malkin, Bay Networks, A. Harkin, “TFTP Timeout Interval and Transfer Size Options” RFC2349, 1998. [Online]. %Dostupné z \url{http://tools.ietf.org/html/rfc2349}
+%\end{itemize}
+
+\end{document}
