@@ -3,6 +3,7 @@
 
 #include <map>
 #include <limits>
+#include "gen.h"
 
 class Event;
 //namespace libsim {
@@ -13,13 +14,11 @@ class Event;
   double TIME = 0;
   double TIME_END = 10^256;//std::numeric_limits<double>::max;
 
-  // Calendar -- TODO udelat strukturu - timeline, vyjmuty prvek z fronty zarizeni
+  // Calendar
   Timeline calendar;
   
   #include "event.h"
-  //#include "process.h"
   #include "store.h"
-  //#include "facility.h"
 
   /**
    * Initialize start time and end time

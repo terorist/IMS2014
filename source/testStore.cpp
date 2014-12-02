@@ -10,5 +10,6 @@ int main() {
   store->Enter(1);
   store->Enter(5);
   store->Enter(7);
-  std::cout << store->queue[0].pop() << std::endl;
+  for (;store->queue[0]->size() > 0; store->Leave())
+    std::cout << store->queue[0]->front() << std::endl;
 }
