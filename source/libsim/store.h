@@ -19,7 +19,7 @@ public:
   }
   void Leave();
   
-  bool IsFull() {
+  int IsFull() {
     return !(capacity>entered);
   }
 protected:
@@ -27,7 +27,7 @@ protected:
   int entered;
   //TODO
 public:
-  std::map<std::queue</*Process*/int>> queue;
+  std::map<int, std::queue</*Process*/int> > queue;
 };
 
 #endif // __STORE_H__

@@ -18,7 +18,7 @@ class Event;
   
   #include "event.h"
   //#include "process.h"
-  //#include "store.h"
+  #include "store.h"
   //#include "facility.h"
 
   /**
