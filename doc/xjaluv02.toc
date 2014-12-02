@@ -1,0 +1,17 @@
+\select@language {czech}
+\contentsline {section}{\numberline {1}\IeC {\'U}vod}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}\IeC {\v R}e\IeC {\v s}itel\IeC {\'e} a zdroje informac\IeC {\'\i }}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Experiment\IeC {\'a}ln\IeC {\'\i } ov\IeC {\v e}\IeC {\v r}ov\IeC {\'a}n\IeC {\'\i } validity modelu}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Rozbor t\IeC {\'e}matu a pou\IeC {\v z}it\IeC {\'y}ch metod/technologi\IeC {\'\i }}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Pou\IeC {\v z}it\IeC {\'e} postupy}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}P\IeC {\r u}vod pou\IeC {\v z}it\IeC {\'y}ch metod/technologi\IeC {\'\i }}{2}{subsection.2.2}
+\contentsline {section}{\numberline {3}Koncepce}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Kalend\IeC {\'a}\IeC {\v r} ud\IeC {\'a}lost\IeC {\'\i }}{2}{subsection.3.1}
+\contentsline {section}{\numberline {4}Architektura simula\IeC {\v c}n\IeC {\'\i }ho modelu/simul\IeC {\'a}toru}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Kalend\IeC {\'a}\IeC {\v r} ud\IeC {\'a}lost\IeC {\'\i }}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Fronta}{3}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Obslu\IeC {\v z}n\IeC {\'e} linky}{3}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{3}{subsection.4.4}
+\contentsline {section}{\numberline {5}Podstata simula\IeC {\v c}n\IeC {\'\i }ch experiment\IeC {\r u} a jejich pr\IeC {\r u}b\IeC {\v e}h}{3}{section.5}
+\contentsline {section}{\numberline {6}Shrnut\IeC {\'\i } simula\IeC {\v c}n\IeC {\'\i }ch experiment\IeC {\r u} a z\IeC {\'a}v\IeC {\v e}r}{3}{section.6}
+\contentsline {section}{Reference}{4}{section*.2}
