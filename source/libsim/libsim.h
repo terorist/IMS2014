@@ -2,7 +2,7 @@
 #define __LIBSIM_H__
 
 #include <map>
-#include <limits>
+#include <climits>
 #include "gen.h"
 
 class Event;

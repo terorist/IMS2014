@@ -5,7 +5,7 @@
 #include <queue>
 #include "libsim.h"
 
-typedef std::map<int, std::queue<Event*>* > Queue;
+typedef /*std::map<int, */std::queue<Event*>/* >*/ Queue;
 
 struct errorStoreLeave : std::exception {
   const char* what() const throw() {return "Error: leaving more than entered\n";}
@@ -13,16 +13,17 @@ struct errorStoreLeave : std::exception {
 
 class Store {
 public:
-  Store(unsigned long size = 1) {
+  Store(const char* n, unsigned long size = 1) {
     capacity = size;
     entered = 0;
-    queue[0] = new std::queue<Event*>;
+    name = n;
+    //queue[0] = new std::queue<Event*>;
   }
   
-  void Enter(Event* proc, unsigned long reserve = 1, int priority = 0) {
+  void Enter(Event* proc, unsigned long reserve = 1/*, int priority = 0*/) {
     //Whole capacity is used - process to queue
     if (Full()) {
-      queue[priority]->push(proc);
+      queue/*[priority]*/.push(proc);
       entered += reserve;
       return;
     }
@@ -32,15 +33,18 @@ public:
   
   void Leave(unsigned long reserved = 1) {
     //Process in queue
-    if (Full()) {
-      for (Queue::reverse_iterator it = queue.rbegin(); it != queue.rend(); ++it) {
+    if (/*Full()*/!queue.empty()) {
+      queue.front()->Activate();
+      queue.pop();
+      /*for (Queue::reverse_iterator it = queue.rbegin(); it != queue.rend(); ++it) {
         if (it->second->empty()) {
           continue;
         }
         it->second->front()->Activate();
         it->second->pop();
         break;
-      }
+      }*/
+      
     }
     unsigned long tmp = entered;
     entered -= reserved;
@@ -57,7 +61,9 @@ public:
     return entered == 0;
   }
   
-//private:
+  const char* name;
+  
+private:
   unsigned long capacity;
   unsigned long entered;
   Queue queue;

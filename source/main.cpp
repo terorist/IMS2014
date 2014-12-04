@@ -1,13 +1,12 @@
 #include <iostream>
 #include "libsim/libsim.h"
 
-  #include <typeinfo>
-
-Store* dojicky = new Store(5);
-Store* rampa = new Store();
-Store* kapacitaAuta = new Store(20);
-Store* konvice = new Store(-1);
+Store* dojicky = new Store("Dojicky", 5);
+Store* rampa = new Store("Rampa");
+Store* kapacitaAuta = new Store("KapacitaAuta", 20);
+Store* konvice = new Store("Konvice");
 unsigned long vydojeno = 0;
+unsigned long odvezeno = 0;
 
 class KravaMaDojicku : public Event {
 public:
@@ -62,13 +61,15 @@ void KravyTvorbaMleka::Behavior() {
 }
 
 void KravaDodojila::Behavior() {
-  konvice->Leave();
+  if (konvice->Full()) {
+    konvice->Leave();
+  }
   ++vydojeno;
   dojicky->Leave();
   (new KravyTvorbaMleka)->Activate();
 }
 
-/*class AutoNaCeste : public Event {
+class AutoNaCeste : public Event {
   void Behavior();
 };
 
@@ -96,31 +97,33 @@ void AutoNaRampe::Behavior() {
 }
 
 void CekaniNaKonvici::Behavior() {
-  (new AutoNaRampe)->Activate(Uniform(1, 2));
-}*/
+  if (odvezeno < vydojeno) {
+    ++odvezeno;
+    (new AutoNaRampe)->Activate(Uniform(1, 2));
+  }
+  else {
+    konvice->Enter(this);
+  }
+}
 
 int main() {
-  konvice->Enter(new Event, -1);
   int kravy = 100;
-  //int auta = 2;
+  int auta = 2;
   for (int i = 0; i < kravy; ++i) {
     (new KravyTvorbaMleka)->Activate();
   }
-  /*for (int i = 0; i < auta; ++i) {
+  for (int i = 0; i < auta; ++i) {
     (new AutoNaCeste)->Activate();
-  }*/
+  }
   init(0, 200*60);
   run();
   std::cout << vydojeno << std::endl;
 
-  while (!calendar.empty()) {
+  /*while (!calendar.empty()) {
     std::cout << calendar.begin()->first << "\t" << calendar.begin()->second->name << std::endl;
     
     calendar.erase(calendar.begin());
-  }
-  std::cout << dojicky->queue[0]->size();
+  }*/
+  std::cout << dojicky->name << std::endl;
   return 0;
-  
-  /*for (int i = 0; i < 250; ++i)
-    std::cout << Random() << std::endl;*/
 }
