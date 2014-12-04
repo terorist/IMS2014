@@ -2,11 +2,14 @@
 #define __EVENT_H__
 
 #include <map>
+#include <string>
 #include "libsim.h"
 
 class Event {
 public:
+  std::string name;
   Event() {
+    name = "event";
   }
   ~Event() {
   }
@@ -18,7 +21,6 @@ public:
   void Activate() {
     calendar.insert(std::make_pair(TIME, this));
   }
-protected:
 };
 
 #endif // __EVENT_H__
