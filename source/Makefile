@@ -1,7 +1,8 @@
-test1: main.cpp mkbin
-	g++ main.cpp -pedantic -Wall -Wextra -o bin/test1
+bin/kravin: kravin.cpp bin
+	g++ kravin.cpp -pedantic -Wall -Wextra -o bin/kravin
 	
-test2: testStore.cpp mkbin
+test2: testStore.cpp bin
 	g++ testStore.cpp -pedantic -Wall -Wextra -Werror -o bin/test2
-mkbin:
-	mkdir bin 2>/dev/null || echo "Slozka bin vytvorena"
+	
+bin:
+	mkdir bin
