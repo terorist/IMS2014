@@ -10,7 +10,7 @@ public:
   Stats(const char* n) {
     name = n;
     max = 0;
-    minWaitTime = 10^256;
+    minWaitTime = -1.0;
     maxWaitTime = 0.0;
     avgWaitTime = 0.0;
     withoutQueue = 0;
@@ -40,7 +40,7 @@ public:
       currentWaitTime = TIME - times.front();
       avgWaitTime += currentWaitTime;
       times.pop();
-      if (minWaitTime > currentWaitTime) {
+      if (minWaitTime > currentWaitTime || minWaitTime < 0.0) {
         minWaitTime = currentWaitTime;
       }
       if (maxWaitTime < currentWaitTime) {
@@ -55,12 +55,8 @@ public:
     "\n+-------------------------------------------------------+" <<
     "\n| Celkovy pocet pozadavku: " << requests <<
     "\n| Pocet pozadavku bez fronty: " << withoutQueue <<
-    "\n+-------------------------------------------------------+" <<
-    "\n| Fronta" <<
-    "\n| Prichozi pozadavky ve fronte: " << requests - withoutQueue <<
     "\n| Aktualni delka fronty: " << times.size() <<
     "\n| Maximalni delka fronty: " << max <<
-    "\n| Prumerna delka fronty: " << (requests - withoutQueue)/TIME <<
     "\n| Minimalni cas cekani: " << minWaitTime <<
     "\n| Maximalni cas cekani: " << maxWaitTime <<
     "\n| Prumerny cas cekani: " << avgWaitTime/(requests-withoutQueue) <<
