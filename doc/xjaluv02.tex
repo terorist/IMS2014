@@ -52,37 +52,39 @@ Vypracovali: Lenka Jalůvková (xjaluv02), Jiří Picek (xpicek01)} \\
 {\Large Dne: \today}
 \end{titlepage}
 
-\tableofcontents
+%\tableofcontents
 
 \newpage
 \section{Úvod} \label{uvod}
 
-V této práci je řešena implementace diskrétního simulátoru pro modelování (\cite{peringer}, slajd 119) založeného na kalendáři událostí (\cite{peringer}, slajd 173). Chování tohoto simulátoru je předvedeno na dvou vybraných příkladech z democvičení předmětu IMS, vybrali jsme příklad Kravín a Vlek (\cite{demo1}, slajd 22 a 28).
+V této práci je řešena implementace diskrétního simulátoru pro modelování (\cite{peringer}, slajd 119) založeného na kalendáři událostí (\cite{peringer}, slajd 173). Chování tohoto simulátoru je předvedeno na dvou vybraných příkladech z democvičení předmětu IMS, vybrali jsme příklad Učebna a Kravín (\cite{demo1}, slajd 19 a 22).
+Smyslem experimentu je demonstrovat, že náš simulační nástroj \texttt{libsim} odpovídá již existujícím simulátorům.
 
 \subsection{Řešitelé a zdroje informací}
 
-Projekt vypracoval tým ve složení Lenka Jalůvková a Jiří Picek. Využili jsme znalosti nabyté na přednáškách a democvičeních předmětu IMS.
+Projekt vypracoval tým ve složení Lenka Jalůvková a Jiří Picek. Využili jsme znalosti nabyté na přednáškách a democvičeních předmětu IMS. Problém jsme také prokonzultovali s doktorem Martinem Hrubým.
 
 \subsection{Experimentální ověřování validity modelu}
 
-Validita modelu byla ověřena podle modelů odprezentovaných v rámci democvičení předmětu IMS. Dále jsme validitu vybraných modelů ověřili za využití SIMLIBU (~\cite{priklady}~\texttt{kravin.cpp}, \texttt{lyzar.cpp}).
+Validita vybraných modelů byla ověřena za využití modelů v SIMLIBU odprezentovaných v rámci democvičení předmětu IMS (\cite{priklady}~\texttt{kravin.cpp}, \texttt{ucebna.cpp}). 
+
+Výsledné modely byly testovány na školním serveru merlin.fit.vutbr.cz, systém CentOS a také na notebooku se systémem ArchLinux.
  
 \section{Rozbor tématu a použitých metod/technologií}
 
-Diskrétní simulátor modeluje systém jako diskrétní (nespojitou) posloupnost událostí v čase. Diskrétní simulace je tedy opakem simulace spojité, která kontinuálně zaznamenává dynamiku systému v čase. Spojitá simulace může být také označena jako simulace založená na činnostech. Čas je rozdělen na malé intervaly a stav systému je aktualizován na základě množiny činností, které se odehrávají v daném časovém intervalu. Protože diskrétní simulace nemusí zpracovávat každý časový interval, mohou běžet mnohem rychleji než odpovídající spojité simulace~\cite{simulace.info}. 
+Diskrétní simulátor modeluje systém jako diskrétní (nespojitou) posloupnost událostí v čase. Diskrétní simulace je tedy opakem simulace spojité, která kontinuálně zaznamenává dynamiku systému v čase. Spojitá simulace může být také označena jako simulace založená na činnostech. Čas je rozdělen na malé intervaly a stav systému je aktualizován na základě množiny činností, které se odehrávají v daném časovém intervalu. Protože diskrétní simulátor nemusí zpracovávat každý časový interval, mohou běžet mnohem rychleji než odpovídající spojité simulátory~\cite{simulace.info}. 
 
 \subsection{Použité postupy}
 
-Diskrétní simulátor je implementován v jazyce C++, který nám umožnil objektový vývoj.
+Diskrétní simulátor je implementován v jazyce C++, který nám umožnil objektový vývoj. Programování nám zjednodušilo využití tříd, které k sobě svazují data a funkce nad nimi.
 
 \subsection{Původ použitých metod/technologií}
+
+Při tvorbě projektu nám byla inspirací knihovna SIMLIB, která umožňuje diskrétní i spojitou simulaci, dále demonstrační cvičení a přednášky předmětu IMS.
+
 \section{Koncepce}
-ABSTRAKTNI popis programu bez nazvu trid.
 
-Hlavní komponentou diskrétního simulátoru je kalendář událostí, do kterého přidáváme nebo vyjímáme záznamy. Popsat Procesy, Zařízení, Obslužná linka??
-
-\subsection{Kalendář událostí}
-
+Hlavní komponentou diskrétního simulátoru je kalendář událostí, do kterého přidáváme nebo vyjímáme záznamy. 
 Kalendář událostí je uspořádaná datová struktura uchovávající aktivační záznamy budoucích událostí. Každá naplánovaná budoucí událost \emph{next event} má v kalendáři záznam obsahující položky $[(acttime_{i}, priority_{i}, event_{i}), \dots]$. Kalendář umožňuje výběr prvního záznamu s nejnižším aktivačním časem a vkládání/rušení aktivačních záznamů.
 
 Princip kalendáře událostí:
@@ -100,15 +102,101 @@ cas = T_END; konec simulace
 
 \section{Architektura simulačního modelu/simulátoru}
 
-Prvky simulátoru jsou implementovány v pěti hlavních třídách (\texttt{calendar.cpp}, \texttt{facility.cpp} ...). Tyto třídy jsou dále využívány pro simulaci, kterou najdeme v \texttt{simulation.cpp}? Níže jsou jednotlivé třídy popsány.
+Prvky simulátoru jsou implementovány v pěti hlavních částech (\texttt{event.h}, \texttt{gen.h}, \texttt{libsim.h}, \texttt{stat.h} a \texttt{store.h}), které tvoří prvky našeho simulátoru \texttt{libsim}. Tento simulátor je dále využíván v modelech kravín a učebna, které jsou v souborech \texttt{kravin.cpp} a \texttt{ucebna.cpp}. Níže jsou jednotlivé části blíže rozebrány.
 
 \subsection{Kalendář událostí}
-\subsection{Fronta}
-\subsection{Obslužné linky}
-\subsection{Zařízení} 
+
+Kalendář událostí se nachází v souboru \texttt{libsim.h}. Fronta událostí pro kalendář je implementována jako multimapa z knihovny STL (Standard Template Library), která jednotlivé prvky seřadí dle hodnot klíčů, v našem případě časových záznamů. Pokud jsou klíče shodné, jejich pořadí není definováno, to však u simulace není podstatné, protože události se mají provádět ve stejný okamžik, takže nelze rozhodnout, která má přijít dříve.
+
+Hlavní smyčka kalendáře je implementována podle algoritmu výše REFKAL v mírně pozměněném pořadí. Nejprve proběhne kontrola časové zarážky, dále se nastaví čas na čas aktivace aktuální události a poté se vybere událost a zavolá se její provedení. Kalendář se inicializuje pomocí funkce \texttt{init}, které se předává počáteční a koncový čas simulace. Tyto časy je možné kdykoli v simulaci přečíst z proměnných \texttt{TIME} a \texttt{TIME\_END}.
+
+\subsection{Události}
+
+Další důležitou částí je soubor \texttt{event.h} implementující události v simulaci. Události defaultně nemají žádné chování, to se musí vytvořit až v simulaci. Podporují aktivaci v aktuálním čase nebo za zadanou dobu.
+
+\subsection{Sklad}
+
+Sklad je implementován v souboru \texttt{store.h}, který obsahuje základní operace se skladem, a to zabrání skladu (metoda \texttt{Enter}) a jeho uvolnění (metoda \texttt{Leave}). Dále obsahuje funkce pro zjištění, zda je sklad prázdný (metoda \texttt{Empty}) či plný (metoda \texttt{Full}). 
+
+\subsubsection{Zařízení}
+Při použití skladu s defaultními hodnotami parametrů se chová jako zařízení. Jedná se o velikost skladu u konstruktoru a počet zabíraných nebo uvolňovaných míst u \texttt{Enter} a \texttt{Leave}.
+
+\subsection{Generátor}
+
+Generátory jsou implementovány v \texttt{gen.h}. Obsahuje pseudonáhodný generátor čísel z intervalu $\langle$0,1) a dále generátory s exponenciálním, s normálním a rovnoměrným rozložením.
+
+\subsubsection{Pseudonáhodný generátor}
+
+Pseudonáhodný generátor jsme implementovali ve funkci \texttt{Random}, nejprve jsme se inspirovali z opory lineárním kongruentním generátorem (OPORA str. 18-20), avšak generoval příliš malá čísla i s různým nastavením parametrů, čímž nepříznivě ovlivnil výsledky simulací. Nakonec jsme jej implementovali za využití standardní C funkce \texttt{rand}.
+
+\subsubsection{Generátor s exponenciálním rozložením}
+
+Generátor s exponenciálním rozložením je implementován ve funkci \texttt{Exponential}. V tomto případě jsme se inspirovali knihovnou SIMLIB. Pro výpočet využívá výše popsaný pseudonáhodný generátor.
+
+\subsubsection{Generátor s normálním rozložením}
+
+Funkce \texttt{Uniform} obsahuje generátor s normálním rozložením. Funkci jsme implmentovali dle principu (http://stackoverflow.com/questions/2325472/generate-random-numbers-following-a-normal-distribution-in-c-c).
+
+\subsubsection{Generátor s rovnoměrným rozložením}
+
+Generátor s rovnoměrným rozložením je implementován ve funkci \texttt{Uniform}. Tuto funkci jsme implementovali na základě předchozích znalostí.
+
+\subsection{Statistiky}
+
+V souboru \texttt{stat.h} jsou implementovány statistiky, jejichž výstup následně můžeme vypsat po dokončení simulace. Statistické výpisy jsou prováděny pouze pro sklad. 
+
+Sledované položky skladu jsou celkový počet požadavků o zabrání skladu, počet požadavků, které zaberou sklad bez čekání ve frontě a statistiky nad frontou u skladu. Sledují se příchozí požadavky ve frontě, dále jeji maximální, průměrná a aktuální délka a minimální, maximální a průměrný čas čekání. 
+
+Funkce statistik se volají v metodách skladu v určitých případech. Pokud se do skladu vstoupí bez čekání ve frontě, zavolá se metoda \texttt{EnterNonqueued} ve které se zvýší počet požadavků o sklad a počet požadavků, které prošly bez fronty. Pokud se vstoupí do fronty, tak se uchová aktuální čas, kdy se vstupuje do fronty, zkontroluje se délka fronty pro uchování maximální délky fronty a zvýší se počet požadavků o sklad. V případě opouštění fronty se dopočítávají minimální, maximální čekací čas a počítá se celkový čas strávený ve frontě, který se při výpisu dále přepočítá na průměrný čas čekání ve frontě.
 
 \section{Podstata simulačních experimentů a jejich průběh}
+
+Činnost simulátoru byla ověřena na dvou modelech z demonstračních cvičení, a to příklad učebna a kravín.
+
+\subsection{Postup experimentování} 
+
+V jednotlivých modelech jsme nejprve nastavili hodnoty parametrů podle příslušných zadání, následně jsme je změnili na základě výsledků. Nakonec jsme je nastavili stejně jako v případě modelů implementovaných pomocí knihovny SIMLIB (\cite{priklady}).
+
+\subsection{Experimenty}
+
+Prováděli jsme experimenty nad oběma příklady (Učebna, Kravín) převzatými z demonstračních cvičení předmětu IMS.
+
+\subsubsection{ Kravín}
+%zvysit pocet aut/kapacitu auta, pocet dojicek
+
+První experiment je prováděn při nastavení hodnot shodným se zadáním. V kravíně je 100 krav, 5 dojiček, 1 nakládací rampa a 2 auta. Auto může naložit 20 konvic. Experiment je prováděn v simulačním čase 0 -- 200 hodin.
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{kravy1.jpg}
+\caption{Experiment s nastavením dle zadání}
+\label{obr1}
+\end{figure}
+
+Z výsledku na obrázku~\ref{obr1} vidíme, že dojičky nejsou plně využity. Proto pro další experiment snížíme počet dojiček na 3, stejně jako v simulaci příkladu  SIMLIB (~\cite{priklady}).
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{kravy2.jpg}
+\caption{Experiment se sníženým počtem dojiček}
+\label{obr2}
+\end{figure}
+
+Z výsledku na obrázku~\ref{obr2} vidíme, že dojičky jsou lépe využity a že maximálně čekalo 7 krav nejdéle však 15 minut. Dále auto čeká na volnou rampu nejméně hodinu. Naplněné auto náklad převáží maximálně hodinu (30 - 60 minut), proto jsme usoudili, že by mohlo stačit pouze jedno auto, tudíž další experiment je pouze s jedním autem.
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{kravy3.jpg}
+\caption{Experiment se sníženým počtem aut}
+\label{obr3}
+\end{figure}
+
+Z výsledků na obrázku~\ref{obr3} vidíme, že auto přepravilo méně konvic než v předchozím případě, vyplatily by se dvě auta s dvěma rampama.
+
+%udelat referencni SIMLIB printscreen +ucebna+teorie
+
 \section{Shrnutí simulačních experimentů a závěr}
+U statistik se případné další požadavky sledovaných hodnot dají snadno doplnit, my jsme implementovali pouze základní z nich, které jsme shledali důležitými.
 
 \newpage
 
