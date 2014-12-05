@@ -10,33 +10,21 @@ unsigned long odvezeno = 0;
 
 class KravaMaDojicku : public Event {
 public:
-  KravaMaDojicku() {
-    name="KravaMaDojicku";
-  }
   void Behavior();
 };
 
 class KravaNaDojicku : public Event {
 public:
-  KravaNaDojicku() {
-    name="KravaNaDojicku";
-  }
   void Behavior();
 };
 
 class KravyTvorbaMleka : public Event {
 public:
-  KravyTvorbaMleka() {
-    name="KravyTvorbaMleka";
-  }
   void Behavior();
 };
 
 class KravaDodojila : public Event {
 public:
-  KravaDodojila() {
-    name="KravaDodojila";
-  }
   void Behavior();
 };
 

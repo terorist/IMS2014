@@ -7,9 +7,7 @@
 
 class Event {
 public:
-  std::string name;
   Event() {
-    name = "event";
   }
   ~Event() {
   }
