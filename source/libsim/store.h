@@ -70,9 +70,10 @@ public:
     statistic->PrintStats();
   }
   
+private:
+
   const char* name;
   
-private:
   unsigned long capacity;
   unsigned long entered;
   Queue queue;
