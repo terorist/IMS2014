@@ -125,7 +125,6 @@ int main() {
   }
   init(0, 200*60);
   run();
-  std::cout << vydojeno << std::endl;
 
   rampa->PrintStats();
   dojicky->PrintStats();
