@@ -1,7 +1,7 @@
 #include <iostream>
 #include "libsim/libsim.h"
 
-Store* dojicky = new Store("Dojicky", 5);
+Store* dojicky = new Store("Dojicky", 3);
 Store* rampa = new Store("Rampa");
 Store* kapacitaAuta = new Store("KapacitaAuta", 20);
 Store* konvice = new Store("Konvice");
@@ -81,6 +81,10 @@ class CekaniNaKonvici : public Event {
   void Behavior();
 };
 
+class NakladaniKonvice : public Event {
+  void Behavior();
+};
+
 void AutoNaCeste::Behavior() {
   rampa->Enter(new AutoNaRampe);
 }
@@ -99,11 +103,15 @@ void AutoNaRampe::Behavior() {
 void CekaniNaKonvici::Behavior() {
   if (odvezeno < vydojeno) {
     ++odvezeno;
-    (new AutoNaRampe)->Activate(Uniform(1, 2));
+    kapacitaAuta->Enter(new NakladaniKonvice);
   }
   else {
     konvice->Enter(this);
   }
+}
+
+void NakladaniKonvice::Behavior() {
+  (new AutoNaRampe)->Activate(Uniform(1, 2));
 }
 
 int main() {
@@ -117,13 +125,9 @@ int main() {
   }
   init(0, 200*60);
   run();
-  std::cout << vydojeno << std::endl;
 
-  /*while (!calendar.empty()) {
-    std::cout << calendar.begin()->first << "\t" << calendar.begin()->second->name << std::endl;
-    
-    calendar.erase(calendar.begin());
-  }*/
-  std::cout << dojicky->name << std::endl;
+  rampa->PrintStats();
+  dojicky->PrintStats();
+
   return 0;
 }
