@@ -7,10 +7,6 @@
 
 class Event {
 public:
-  Event() {
-  }
-  ~Event() {
-  }
   virtual void Behavior() {
   }
   void Activate(double t) {

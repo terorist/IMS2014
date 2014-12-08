@@ -22,6 +22,10 @@ public:
     //queue[0] = new std::queue<Event*>;
   }
   
+  ~Store() {
+    delete statistic;
+  }
+  
   void Enter(Event* proc, unsigned long reserve = 1/*, int priority = 0*/) {
     //Whole capacity is used - process to queue
     if (Full() || entered+reserve > capacity) { //TODO pokud se zabere vetsi kapacita, nemusi platit FIFO, muze byt nedefinovano
