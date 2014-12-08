@@ -111,6 +111,20 @@ while(kalendar je neprazdny){
 cas = T_END; konec simulace
 \end{lstlisting}
 
+%ještě v koncepci by to chtělo zmínit event a store
+Dalšími prostředky pro diskrétní modelování jsou event (báze pro modely událostí) a store (obslužná linka s kapacitou) (\cite{peringer}, slajd 163). Událost je jednorázová akce vyvolaná v určitém modelovém čase. V SIMLIB je odvozena od abstraktní třídy \texttt{Event}, musíme definovat metodu \texttt{Behavior}, jak vidíme níže~\ref{lst:myEvent}. Často jsou nutné periodické události, událost se sama znovu naplánuje. Příklad popisu periodické události:
+
+\begin{lstlisting}[label={lst:myEvent}]
+class Udalost : public Event {
+    void Behavior() {
+        akce udalosti
+        Activate(Time + e);  bude se periodicky aktivovat
+    }
+};
+\end{lstlisting}
+
+Store neboli sklad umožňuje simultánní přístup ke zdroji s určitou kapacitou. Event přistupuje ke skladu s požadavkem na obsazení kapacity. Pokud je kapacita volná, přidělí se (zmenší se množství dostupné kapacity), pokud není volná, event čeká ve frontě. Sklad nemá prioritu obsluhy. Kapacitu může vrátit libovolný event. 
+
 \section{Architektura simulačního modelu/simulátoru}
 
 Prvky simulátoru jsou implementovány v pěti hlavních částech (\texttt{event.h}, \texttt{gen.h}, \texttt{libsim.h}, \texttt{stat.h} a \texttt{store.h}), které tvoří prvky našeho simulátoru \texttt{libsim}. Tento simulátor je dále využíván v modelech Kravín a Učebna, které jsou v souborech \texttt{kravin.cpp} a \texttt{ucebna.cpp}. Níže jsou jednotlivé části blíže rozebrány.
@@ -121,11 +135,11 @@ Kalendář událostí se nachází v souboru \texttt{libsim.h}. Fronta událost�
 
 Hlavní smyčka kalendáře je implementována podle algoritmu výše \ref{lst:myListing} v mírně pozměněném pořadí. Nejprve proběhne kontrola časové zarážky, dále se nastaví čas na čas aktivace aktuální události a poté se vybere událost a zavolá se její provedení. Kalendář se inicializuje pomocí funkce \texttt{init}, které se předává počáteční a koncový čas simulace. Tyto časy je možné kdykoli v simulaci přečíst z proměnných \texttt{TIME} a \texttt{TIME\_END}.
 
-Po ukončení funkce \texttt{run} se kalendář nemaže. Pro smazání se explicitně volá funkce \texttt{freeSimulation}. Statistiky tak můžeme vypisovat ve více časových intervalech.
+Po ukončení funkce \texttt{run} se kalendář nemaže. Pro smazání se explicitně volá funkce \texttt{freeSimu\-lation}. Statistiky tak můžeme vypisovat ve více časových intervalech.
 
 \subsection{Události}
 
-Další důležitou částí je soubor \texttt{event.h} implementující události v simulaci. Události defaultně nemají žádné chování, to se musí vytvořit až v simulaci. Podporují aktivaci v aktuálním čase nebo za zadanou dobu.
+Další důležitou částí je soubor \texttt{event.h} implementující události v simulaci. Podporují aktivaci v aktuálním čase nebo za zadanou dobu. Události defaultně nemají žádné chování, to se musí vytvořit až v simulaci. 
 
 \subsection{Sklad}
 
@@ -164,7 +178,7 @@ Funkce statistik se volají v metodách skladu v určitých případech. Pokud s
 
 \subsection{Překlad}
 
-Překlad probíhá pomocí našeho \texttt{Makefile} příkazem \texttt{make ucebna} nebo \texttt{make kravin}, případně lze přeložit oba příklady najednou pomocí \texttt{make run}. Výsledný překlad je následně umístěn ve složce \texttt{bin}.
+Překlad probíhá pomocí našeho \texttt{Makefile} příkazem \texttt{make ucebna} nebo \texttt{make kravin}, případně lze přeložit a spustit oba příklady najednou pomocí \texttt{make run}. Výsledný překlad je následně umístěn ve složce \texttt{bin}.
 
 \section{Podstata simulačních experimentů a jejich průběh}
 
@@ -211,7 +225,7 @@ Z výsledků na obrázku~\ref{obr3} vidíme, že auto přepravilo méně konvic 
 
 \subsubsection{Učebna}
 
-První experiment je prováděn při nastavení hodnot shodným se zadáním. Máme 10 počítačů, studenti přicházejí v intervalech daných exponenciálním rozložením se středem 10 min. Pokud je počítač volný, obsadí ho a pracují exp(100 min), jinak se 60\% okamžitě postaví do fronty, zbytek odchází. Po 30-60 minutách se však 20\% vrací. Experiment je prováděn v simulačním čase 0 -- 1000000 (stejně jako v demonstračních cvičeních)..
+První experiment je prováděn při nastavení hodnot shodným se zadáním. Máme 10 počítačů, studenti přicházejí v intervalech daných exponenciálním rozložením se středem 10 min. Pokud je počítač volný, obsadí ho a pracují exp(100 min), jinak se 60\% okamžitě postaví do fronty, zbytek odchází. Po 30-60 minutách se však 20\% vrací. Experiment je prováděn v simulačním čase 0 -- 1000000 (stejně jako v demonstračních cvičeních).
 
 \begin{figure}[!h] 
  	\centering
@@ -224,7 +238,7 @@ Z výsledku na obrázku~\ref{obr4} vidíme, že studenti na počítač průměrn
 
 \begin{figure}[!h] 
  	\centering
-	 \includegraphics[]{ucebna1.jpg}
+	 \includegraphics[]{ucebna2.jpg}
 \caption{Experiment se zvýšeným počtem počítačů na 20}
 \label{obr4}
 \end{figure}
@@ -240,7 +254,7 @@ Při počtu 25 počítačů se již netvoří fronty vůbec a studenti mohou pra
 
 \subsubsection{Závěry experimentů}
 
-Bylo provedeno několik experimentů v různých situacích s rozličným nastavením vstupních parametrů. V průběhu experimentování s Kravínem byla odstraněna chyba v modelu, kdy auto bylo připraveno na rampě,  avšak konvice do něj nebyly nakládány.  Na základě experimentů jsme zjistili, že Kravín by fungoval i v případě 3 dojiček a 1 auta.
+Bylo provedeno několik experimentů v různých situacích s rozličným nastavením vstupních parametrů. V průběhu experimentování s Kravínem byla odstraněna chyba v modelu, kdy auto bylo připraveno na rampě,  avšak konvice do něj nebyly nakládány.  Na základě experimentů jsme zjistili, že Kravín by fungoval i v případě 3 dojiček.
 
 V případě Učebny by byla potřeba alespoň 20 počítačů, aby studenti nečekali dlouhé fronty a nejlépe 25, aby mohli pracovat ihned.
 

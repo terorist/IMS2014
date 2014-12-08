@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.18)  8 DEC 2014 11:45
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.18)  8 DEC 2014 16:09
 entering extended mode
 **xjaluv02
 (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.tex
@@ -647,39 +647,36 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.101 P
-       rincip kalendÃ¡Å™e udÃ¡lostÃ­: [1]
-Overfull \hbox (35.00032pt too wide) in paragraph at lines 124--125
-[]\IL2/cmr/m/n/12 Po ukonèení funkce \IL2/cmtt/m/n/12 run \IL2/cmr/m/n/12 se ka-len-dáø ne-ma¾e. Pro sma-zání se ex-pli-citnì volá funkce \IL2/cmtt/m/n/12 freeSimulation\IL2/cmr/m/n/12 .
+       rincip kalendÃ¡Å™e udÃ¡lostÃ­: [1] [2]
+Overfull \hbox (0.86145pt too wide) in paragraph at lines 138--139
+[]\IL2/cmr/m/n/12 Po ukonèení funkce \IL2/cmtt/m/n/12 run \IL2/cmr/m/n/12 se ka-len-dáø ne-ma¾e. Pro sma-zání se ex-pli-citnì volá funkce \IL2/cmtt/m/n/12 freeSimu-
  []
 
-[2] [3] <kravy1.jpg, id=171, 458.46281pt x 175.40532pt>
+[3] <kravy1.jpg, id=180, 458.46281pt x 175.40532pt>
 File: kravy1.jpg Graphic file (type jpg)
- <use kravy1.jpg> <kravy2.jpg, id=174, 481.8pt x 175.40532pt>
+ <use kravy1.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<kravy2.jpg, id=183, 481.8pt x 175.40532pt>
 File: kravy2.jpg Graphic file (type jpg)
  <use kravy2.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<kravy3.jpg, id=176, 481.04718pt x 177.66376pt>
+<kravy3.jpg, id=185, 481.04718pt x 177.66376pt>
 File: kravy3.jpg Graphic file (type jpg)
- <use kravy3.jpg> [4 <C:/Users/Masinka/Desktop/IMS/doc/kravy1.jpg>] <ucebna1.jpg, id=184, 240.9pt x 180.675pt>
+ <use kravy3.jpg> [4] [5 <C:/Users/Masinka/Desktop/IMS/doc/kravy1.jpg> <C:/Users/Masinka/Desktop/IMS/doc/kravy2.jpg> <C:/Users/Masinka/Desktop/IMS/doc/kravy3.jpg>] <ucebna1.jpg, id=198, 240.9pt x 180.675pt>
 File: ucebna1.jpg Graphic file (type jpg)
- <use ucebna1.jpg>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: ucebna1.jpg Graphic file (type jpg)
-<use ucebna1.jpg>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<ucebna3.jpg, id=188, 240.9pt x 179.16937pt>
+ <use ucebna1.jpg> <ucebna2.jpg, id=201, 240.9pt x 175.40532pt>
+File: ucebna2.jpg Graphic file (type jpg)
+ <use ucebna2.jpg> <ucebna3.jpg, id=203, 240.9pt x 179.16937pt>
 File: ucebna3.jpg Graphic file (type jpg)
  <use ucebna3.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <C:/Users/Masinka/Desktop/IMS/doc/kravy2.jpg> <C:/Users/Masinka/Desktop/IMS/doc/kravy3.jpg>] [6 <C:/Users/Masinka/Desktop/IMS/doc/ucebna1.jpg> <C:/Users/Masinka/Desktop/IMS/doc/ucebna3.jpg>] [7] (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.bbl
+[6 <C:/Users/Masinka/Desktop/IMS/doc/ucebna1.jpg> <C:/Users/Masinka/Desktop/IMS/doc/ucebna2.jpg>] [7 <C:/Users/Masinka/Desktop/IMS/doc/ucebna3.jpg>] (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.bbl
 Underfull \hbox (badness 1303) in paragraph at lines 4--9
 []\IL2/cmr/m/it/12 Diskretní si-mu-lace\IL2/cmr/m/n/12 .  [on-line], 2013.  URL [][]$\IL2/cmtt/m/n/12 http : / / www . simulace . info / index . php /
  []
@@ -720,11 +717,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--48
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
  [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
  (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
 Package rerunfilecheck Info: File `xjaluv02.out' has not changed.
 (rerunfilecheck)             Checksum: 2321B71C66600B83C402655163EBD08E;4702.
 
@@ -733,18 +730,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11084 strings out of 494053
- 157371 string characters out of 3146179
- 269795 words of memory out of 3000000
- 14139 multiletter control sequences out of 15000+200000
+ 11097 strings out of 494053
+ 157555 string characters out of 3146179
+ 275823 words of memory out of 3000000
+ 14144 multiletter control sequences out of 15000+200000
  13284 words of font info for 36 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  42i,9n,40p,722b,1034s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi657\cstt10.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csti12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi720\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\cstt12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csr12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi864\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi720\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi864\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi1037\cscsc10.pk><C:/Program Files (x86)/MIktex/fonts/type1/
 public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on xjaluv02.pdf (9 pages, 524208 bytes).
+Output written on xjaluv02.pdf (9 pages, 568825 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 743 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 
