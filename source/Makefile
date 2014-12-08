@@ -1,10 +1,12 @@
+all: bin/kravin bin/ucebna
+
 kravin: bin/kravin
 	echo "Build complete"
 
 ucebna: bin/ucebna
 	echo "Build complete"
 
-run: kravin ucebna
+run: bin/kravin bin/ucebna
 	bin/kravin
 	bin/ucebna
 
