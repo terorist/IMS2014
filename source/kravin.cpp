@@ -35,17 +35,14 @@ void KravaMaDojicku::Behavior() {
   else {
     (new KravaDodojila)->Activate(Exponential(8.0));
   }
-  //delete this;
 }
 
 void KravaNaDojicku::Behavior() {
   dojicky->Enter(new KravaMaDojicku);
-  //delete this;
 }
 
 void KravyTvorbaMleka::Behavior() {
   (new KravaNaDojicku)->Activate(Exponential(15.0 * 60.0));
-  //delete this;
 }
 
 void KravaDodojila::Behavior() {
@@ -94,7 +91,8 @@ void CekaniNaKonvici::Behavior() {
     kapacitaAuta->Enter(new NakladaniKonvice);
   }
   else {
-    konvice->Enter(this);
+    //konvice->Enter(this);
+    konvice->Enter(new CekaniNaKonvici);
   }
 }
 
@@ -114,8 +112,16 @@ int main() {
   init(0, 200*60);
   run();
 
+  //Tisk statistik
   rampa->PrintStats();
   dojicky->PrintStats();
+
+  //Uvolneni pameti
+  endSimulation();
+  delete rampa;
+  delete dojicky;
+  delete konvice;
+  delete kapacitaAuta;
 
   return 0;
 }

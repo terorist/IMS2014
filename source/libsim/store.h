@@ -6,6 +6,7 @@
 #include "libsim.h"
 #include "stat.h"
 
+//Typ fronta -- zakomentovana cast resi prioritni frontu
 typedef /*std::map<int, */std::queue<Event*>/* >*/ Queue;
 
 struct errorStoreLeave : std::exception {
@@ -24,8 +25,16 @@ public:
   
   ~Store() {
     delete statistic;
+    Event* act;
+    // uvolneni vsech Eventu z fronty
+    while (!queue.empty()) {
+      act = queue.front();
+      queue.pop();
+      delete act;
+    }
   }
   
+  //Metoda pro zabrani urcite kapacity skladu -- zakomentovana cast resi priority, ktere nejsou pro nase ucely potreba
   void Enter(Event* proc, unsigned long reserve = 1/*, int priority = 0*/) {
     //Whole capacity is used - process to queue
     if (Full() || entered+reserve > capacity) { //TODO pokud se zabere vetsi kapacita, nemusi platit FIFO, muze byt nedefinovano
@@ -39,6 +48,7 @@ public:
     proc->Activate();
   }
   
+  //Metoda pro uvolneni urcite kapacity skladu -- zakomentovana cast resi priority, ktere nejsou pro nase ucely potreba
   void Leave(unsigned long reserved = 1) {
     //Process in queue
     if (/*Full()*/!queue.empty()) {
@@ -62,14 +72,17 @@ public:
     }
   }
   
+  //Kontrola, zda je ve skladu volno
   bool Full() {
     return !(capacity>entered);
   }
   
+  //Kontrola, zda je sklad uplne prazdny
   bool Empty() {
     return entered == 0;
   }
   
+  //Vytiskne statistiky sesbirane v prubehu simulace
   void PrintStats() {
     statistic->PrintStats();
   }

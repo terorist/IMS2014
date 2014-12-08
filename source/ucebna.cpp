@@ -25,7 +25,8 @@ public:
 
 void Student::Behavior(){  
 	(new StudentPrichod)->Activate();
-	this->Activate(Exponential(10));
+	//this->Activate(Exponential(10));
+	(new Student)->Activate(Exponential(10));
 }
 
 void StudentPrichod::Behavior(){
@@ -35,7 +36,8 @@ void StudentPrichod::Behavior(){
 			if(Random() > 0.2){
 				return;		//odesel a nevrati se 
 			} else {
-				this->Activate(Uniform(30,60));	//odesel, vrati se
+				//this->Activate(Uniform(30,60));	//odesel, vrati se
+				(new StudentPrichod)->Activate(Uniform(30,60));   //odesel, vrati se
 			}
 		}else{
 			pocitace->Enter(new MaPocitac);
@@ -57,4 +59,7 @@ int main(){
 	(new Student)->Activate();
 	run();
 	pocitace->PrintStats();
+	
+	endSimulation();
+	delete pocitace;
 }

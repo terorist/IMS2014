@@ -47,6 +47,17 @@ class Event;
       actual = calendar.begin()->second;
       calendar.erase(calendar.begin());
       actual->Behavior();
+      delete actual;
+    }
+  }
+  
+  void endSimulation() {
+    Event* actual;
+    //vyprazdneni kalendare
+    while (!calendar.empty()) {
+      actual = calendar.begin()->second;
+      calendar.erase(calendar.begin());
+      delete actual;
     }
   }
 //}
