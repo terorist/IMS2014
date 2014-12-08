@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.18)  5 DEC 2014 16:51
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.18)  8 DEC 2014 11:45
 entering extended mode
 **xjaluv02
 (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.tex
@@ -323,9 +323,6 @@ Package tocbibind Info: The document has section divisions on input line 50.
 
 Package tocbibind Note: Using section or other style headings.
 
-) ("C:\Program Files (x86)\MIktex\tex\latex\ltxmisc\url.sty"
-\Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 ) ("C:\Program Files (x86)\MIktex\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
  ("C:\Program Files (x86)\MIktex\tex\latex\graphics\graphics.sty"
@@ -342,27 +339,82 @@ File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
 ))
 \Gin@req@height=\dimen116
 \Gin@req@width=\dimen117
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+) ("C:\Program Files (x86)\MIktex\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count102
+\float@exts=\toks19
+\float@box=\box28
+\@float@everytoks=\toks20
+\@floatcapt=\box29
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2011/10/30 v1.1c Sub-captions (AR)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2011/11/10 v3.2e Customizing captions (AR)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
+)
+\c@ContinuedFloat=\count103
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count104
+\c@subtable=\count105
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count106
+\@cmidlb=\count107
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count108
+\@lastruleclass=\count109
+\@thisrulewidth=\dimen136
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+ ("C:\Program Files (x86)\MIktex\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen137
+\extrarowheight=\dimen138
+\NC@list=\toks21
+\extratabsurround=\skip43
+\backup@length=\skip44
+) ("C:\Program Files (x86)\MIktex\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+ ("C:\Program Files (x86)\MIktex\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\everycr=\toks22
+\minrowclearance=\skip45
+) ("C:\Program Files (x86)\MIktex\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
  ("C:\Program Files (x86)\MIktex\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Package option `usenames' ignored on input line 216.
 Package xcolor Info: Driver file: pdftex.def on input line 225.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
-Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
- ("C:\Program Files (x86)\MIktex\tex\latex\tools\array.sty"
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen118
-\extrarowheight=\dimen119
-\NC@list=\toks19
-\extratabsurround=\skip43
-\backup@length=\skip44
-)
-\everycr=\toks20
-\minrowclearance=\skip45
-)
-\rownum=\count102
+LaTeX Info: Redefining \color on input line 702.
+\rownum=\count110
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -382,8 +434,7 @@ Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
 Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
  ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\ifluatex.sty"
+) ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -406,12 +457,13 @@ Package: hycolor 2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
 Package: xcolor-patch 2009/12/12 xcolor patch
 )) ("C:\Program Files (x86)\MIktex\tex\latex\oberdiek\letltxmacro.sty"
 Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
-) ("C:\Program Files (x86)\MIktex\tex\latex\oberdiek\kvoptions.sty"
+)
+("C:\Program Files (x86)\MIktex\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
 )
-\@linkdim=\dimen120
-\Hy@linkcounter=\count103
-\Hy@pagecounter=\count104
+\@linkdim=\dimen139
+\Hy@linkcounter=\count111
+\Hy@pagecounter=\count112
  ("C:\Program Files (x86)\MIktex\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2011/03/09 v6.82d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -419,7 +471,7 @@ Now handling font encoding PD1 ...
 ) ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\intcalc.sty"
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-\Hy@SavedSpaceFactor=\count105
+\Hy@SavedSpaceFactor=\count113
  ("C:\Program Files (x86)\MIktex\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
@@ -431,16 +483,16 @@ Package hyperref Info: Plain pages OFF on input line 4040.
 Package hyperref Info: Backreferencing OFF on input line 4045.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4263.
-\c@Hy@tempcnt=\count106
+\c@Hy@tempcnt=\count114
 LaTeX Info: Redefining \url on input line 4616.
  ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\bitset.sty"
 Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
  ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\bigintcalc.sty"
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
-\Fld@menulength=\count107
-\Field@Width=\dimen121
-\Fld@charsize=\dimen122
+\Fld@menulength=\count115
+\Field@Width=\dimen140
+\Fld@charsize=\dimen141
 Package hyperref Info: Hyper figures OFF on input line 5700.
 Package hyperref Info: Link nesting OFF on input line 5705.
 Package hyperref Info: Hyper index ON on input line 5708.
@@ -453,9 +505,9 @@ LaTeX Info: Redefining \pageref on input line 5774.
  ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count108
-\c@Item=\count109
-\c@Hfootnote=\count110
+\Hy@abspage=\count116
+\c@Item=\count117
+\c@Hfootnote=\count118
 )
 
 Package hyperref Message: Driver: hpdftex.
@@ -466,8 +518,8 @@ File: hpdftex.def 2011/03/09 v6.82d Hyperref driver for pdfTeX
 Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
 Package atveryend Info: \enddocument detected (standard).
 )
-\Fld@listcount=\count111
-\c@bookmark@seq@number=\count112
+\Fld@listcount=\count119
+\c@bookmark@seq@number=\count120
  ("C:\Program Files (x86)\MIktex\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
  ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\uniquecounter.sty"
@@ -477,33 +529,37 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 27
 )
 \Hy@SectionHShift=\skip46
 )
-Package hyperref Info: Option `unicode' set `true' on input line 30.
+Package hyperref Info: Option `unicode' set `true' on input line 41.
  ("C:\Program Files (x86)\MIktex\tex\latex\hyperref\puenc.def"
 File: puenc.def 2011/03/09 v6.82d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
-Package hyperref Info: Option `plainpages' set `false' on input line 30.
- (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+Package hyperref Info: Option `plainpages' set `false' on input line 41.
+ (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.aux
+
+LaTeX Warning: Label `obr4' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -539,22 +595,25 @@ LaTeX Font Info:    ... okay on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count113
+\c@lstlisting=\count121
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen123
-\scratchbox=\box28
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen124
-\MPnumerator=\count118
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count122
+\scratchdimen=\dimen142
+\scratchbox=\box30
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen143
+\MPnumerator=\count126
+\everyMPtoPDFconversion=\toks24
 )
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 33.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring ON on input line 44.
  ("C:\Program Files (x86)\MIktex\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
  ("C:\Program Files (x86)\MIktex\tex\latex\oberdiek\refcount.sty"
@@ -562,83 +621,130 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ) ("C:\Program Files (x86)\MIktex\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count119
+\c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
  (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.out) (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.out)
 \@outlinefile=\write4
- <fit-zp2.pdf, id=99, 120.45pt x 120.45pt>
+ <fit-zp2.pdf, id=111, 120.45pt x 120.45pt>
 File: fit-zp2.pdf Graphic file (type pdf)
  <use fit-zp2.pdf> [1
 
 {C:/Users/Masinka/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Masinka/Desktop/IMS/doc/fit-zp2.pdf>]
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 61.
+LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 72.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cslatex\il2cmtt.fd"
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 88.
+(Font)              <12> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 88.
+(Font)              <8> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 88.
+(Font)              <6> on input line 99.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.90 P
-      rincip kalendÃ¡Å™e udÃ¡lostÃ­: [1] [2] [3] <kravy1.jpg, id=153, 352.31625pt x 288.3272pt>
+l.101 P
+       rincip kalendÃ¡Å™e udÃ¡lostÃ­: [1]
+Overfull \hbox (35.00032pt too wide) in paragraph at lines 124--125
+[]\IL2/cmr/m/n/12 Po ukonèení funkce \IL2/cmtt/m/n/12 run \IL2/cmr/m/n/12 se ka-len-dáø ne-ma¾e. Pro sma-zání se ex-pli-citnì volá funkce \IL2/cmtt/m/n/12 freeSimulation\IL2/cmr/m/n/12 .
+ []
+
+[2] [3] <kravy1.jpg, id=171, 458.46281pt x 175.40532pt>
 File: kravy1.jpg Graphic file (type jpg)
- <use kravy1.jpg> <kravy2.jpg, id=156, 347.04657pt x 289.08pt>
+ <use kravy1.jpg> <kravy2.jpg, id=174, 481.8pt x 175.40532pt>
 File: kravy2.jpg Graphic file (type jpg)
  <use kravy2.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <C:/Users/Masinka/Desktop/IMS/doc/kravy1.jpg>] <kravy3.jpg, id=163, 348.55219pt x 289.83281pt>
+<kravy3.jpg, id=176, 481.04718pt x 177.66376pt>
 File: kravy3.jpg Graphic file (type jpg)
- <use kravy3.jpg>
+ <use kravy3.jpg> [4 <C:/Users/Masinka/Desktop/IMS/doc/kravy1.jpg>] <ucebna1.jpg, id=184, 240.9pt x 180.675pt>
+File: ucebna1.jpg Graphic file (type jpg)
+ <use ucebna1.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <C:/Users/Masinka/Desktop/IMS/doc/kravy2.jpg>] (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.bbl
+File: ucebna1.jpg Graphic file (type jpg)
+<use ucebna1.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<ucebna3.jpg, id=188, 240.9pt x 179.16937pt>
+File: ucebna3.jpg Graphic file (type jpg)
+ <use ucebna3.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <C:/Users/Masinka/Desktop/IMS/doc/kravy2.jpg> <C:/Users/Masinka/Desktop/IMS/doc/kravy3.jpg>] [6 <C:/Users/Masinka/Desktop/IMS/doc/ucebna1.jpg> <C:/Users/Masinka/Desktop/IMS/doc/ucebna3.jpg>] [7] (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.bbl
 Underfull \hbox (badness 1303) in paragraph at lines 4--9
 []\IL2/cmr/m/it/12 Diskretní si-mu-lace\IL2/cmr/m/n/12 .  [on-line], 2013.  URL [][]$\IL2/cmtt/m/n/12 http : / / www . simulace . info / index . php /
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+[]\IL2/cmr/m/it/12 Generate ran-dom num-bers following a nor-mal dis-tri-bu-tion in C/C++\IL2/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+\IL2/cmr/m/n/12 [on-line], 2014.  URL [][]$\IL2/cmtt/m/n/12 http : / / stackoverflow . com / questions / 2325472 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+\IL2/cmtt/m/n/12 generate-[]random-[]numbers-[]following-[]a-[]normal-[]distribution-[]in-[]c-[]c$[][]\IL2/cmr/m/n/12 .  [cit.
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 34--40
+[]\IL2/cmr/m/n/12 Peringer P.  \IL2/cmr/m/it/12 Mo-de-lo-vání a si-mu-lace, stu-dijní opora\IL2/cmr/m/n/12 .  [on-line], 2014.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--40
+[][]$\IL2/cmtt/m/n/12 https : / / wis . fit . vutbr . cz / FIT / st / course-[]files-[]st . php / course / IMS-[]IT / lectures /
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 42--48
 []\IL2/cmr/m/n/12 Peringer P.  \IL2/cmr/m/it/12 Pøed-ná¹ky Mo-de-lo-vání a si-mu-lace\IL2/cmr/m/n/12 .  [on-line], 2014.  URL [][]$\IL2/cmtt/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
 \IL2/cmtt/m/n/12 / / wis . fit . vutbr . cz / FIT / st / course-[]files-[]st . php / course / IMS-[]IT / lectures / IMS .
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
- [6 <C:/Users/Masinka/Desktop/IMS/doc/kravy3.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
  (C:\Users\Masinka\Desktop\IMS\doc\xjaluv02.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
 Package rerunfilecheck Info: File `xjaluv02.out' has not changed.
-(rerunfilecheck)             Checksum: 4BB0CE381EAFF04706D51D2F155F968D;4331.
+(rerunfilecheck)             Checksum: 2321B71C66600B83C402655163EBD08E;4702.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 9928 strings out of 494053
- 136772 string characters out of 3146179
- 249975 words of memory out of 3000000
- 13018 multiletter control sequences out of 15000+200000
+ 11084 strings out of 494053
+ 157371 string characters out of 3146179
+ 269795 words of memory out of 3000000
+ 14139 multiletter control sequences out of 15000+200000
  13284 words of font info for 36 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 41i,6n,35p,722b,1018s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,9n,40p,722b,1034s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi657\cstt10.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csti12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi720\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\cstt12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csr12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi864\csbx12.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi600\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi720\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi864\csr17.pk> <C:\Users\Masinka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs\dpi1037\cscsc10.pk><C:/Program Files (x86)/MIktex/fonts/type1/
 public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MIktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on xjaluv02.pdf (7 pages, 437944 bytes).
+Output written on xjaluv02.pdf (9 pages, 524208 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 

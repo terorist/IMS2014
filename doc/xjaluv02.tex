@@ -11,6 +11,17 @@
 \newcites{My}{Selected Author's Publications}
 \usepackage[nottoc]{tocbibind} % Add bibbliographies into ToC
 
+\usepackage{graphicx}   % Enhanced support for graphics
+\usepackage{float}      % Figure placing [H]
+\usepackage[list=true,listformat=simple]{subcaption} % Captions of multiple figures
+ 
+%\usepackage{multirow}
+%\usepackage{dblfloatfix}
+\usepackage{booktabs}   % Better-looking tabs
+%\usepackage{tabularx}   % Tables
+\usepackage{colortbl}   % Cell colors
+
+
 \newcommand{\myuv}[1]{\quotedblbase #1\textquotedblleft}
 \usepackage{url}
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
@@ -88,7 +99,7 @@ Hlavní komponentou diskrétního simulátoru je kalendář událostí, do kter�
 Kalendář událostí je uspořádaná datová struktura uchovávající aktivační záznamy budoucích událostí. Každá naplánovaná budoucí událost \emph{next event} má v kalendáři záznam obsahující položky $[(acttime_{i}, priority_{i}, event_{i}), \dots]$. Kalendář umožňuje výběr prvního záznamu s nejnižším aktivačním časem a vkládání/rušení aktivačních záznamů.
 
 Princip kalendáře událostí:
-\begin{lstlisting}
+\begin{lstlisting}[label={lst:myListing}]
 Inicializace kalendare udalosti a modelu
 while(kalendar je neprazdny){
           Vyjmi prvni aktivacni zaznam (AZ) z kalendare
@@ -102,13 +113,15 @@ cas = T_END; konec simulace
 
 \section{Architektura simulačního modelu/simulátoru}
 
-Prvky simulátoru jsou implementovány v pěti hlavních částech (\texttt{event.h}, \texttt{gen.h}, \texttt{libsim.h}, \texttt{stat.h} a \texttt{store.h}), které tvoří prvky našeho simulátoru \texttt{libsim}. Tento simulátor je dále využíván v modelech kravín a učebna, které jsou v souborech \texttt{kravin.cpp} a \texttt{ucebna.cpp}. Níže jsou jednotlivé části blíže rozebrány.
-
+Prvky simulátoru jsou implementovány v pěti hlavních částech (\texttt{event.h}, \texttt{gen.h}, \texttt{libsim.h}, \texttt{stat.h} a \texttt{store.h}), které tvoří prvky našeho simulátoru \texttt{libsim}. Tento simulátor je dále využíván v modelech Kravín a Učebna, které jsou v souborech \texttt{kravin.cpp} a \texttt{ucebna.cpp}. Níže jsou jednotlivé části blíže rozebrány.
+ 
 \subsection{Kalendář událostí}
 
 Kalendář událostí se nachází v souboru \texttt{libsim.h}. Fronta událostí pro kalendář je implementována jako multimapa z knihovny STL (Standard Template Library), která jednotlivé prvky seřadí dle hodnot klíčů, v našem případě časových záznamů. Pokud jsou klíče shodné, jejich pořadí není definováno, to však u simulace není podstatné, protože události se mají provádět ve stejný okamžik, takže nelze rozhodnout, která má přijít dříve.
 
-Hlavní smyčka kalendáře je implementována podle algoritmu výše REFKAL v mírně pozměněném pořadí. Nejprve proběhne kontrola časové zarážky, dále se nastaví čas na čas aktivace aktuální události a poté se vybere událost a zavolá se její provedení. Kalendář se inicializuje pomocí funkce \texttt{init}, které se předává počáteční a koncový čas simulace. Tyto časy je možné kdykoli v simulaci přečíst z proměnných \texttt{TIME} a \texttt{TIME\_END}.
+Hlavní smyčka kalendáře je implementována podle algoritmu výše \ref{lst:myListing} v mírně pozměněném pořadí. Nejprve proběhne kontrola časové zarážky, dále se nastaví čas na čas aktivace aktuální události a poté se vybere událost a zavolá se její provedení. Kalendář se inicializuje pomocí funkce \texttt{init}, které se předává počáteční a koncový čas simulace. Tyto časy je možné kdykoli v simulaci přečíst z proměnných \texttt{TIME} a \texttt{TIME\_END}.
+
+Po ukončení funkce \texttt{run} se kalendář nemaže. Pro smazání se explicitně volá funkce \texttt{freeSimulation}. Statistiky tak můžeme vypisovat ve více časových intervalech.
 
 \subsection{Události}
 
@@ -117,7 +130,7 @@ Další důležitou částí je soubor \texttt{event.h} implementující událos
 \subsection{Sklad}
 
 Sklad je implementován v souboru \texttt{store.h}, který obsahuje základní operace se skladem, a to zabrání skladu (metoda \texttt{Enter}) a jeho uvolnění (metoda \texttt{Leave}). Dále obsahuje funkce pro zjištění, zda je sklad prázdný (metoda \texttt{Empty}) či plný (metoda \texttt{Full}). 
-
+ 
 \subsubsection{Zařízení}
 Při použití skladu s defaultními hodnotami parametrů se chová jako zařízení. Jedná se o velikost skladu u konstruktoru a počet zabíraných nebo uvolňovaných míst u \texttt{Enter} a \texttt{Leave}.
 
@@ -127,7 +140,7 @@ Generátory jsou implementovány v \texttt{gen.h}. Obsahuje pseudonáhodný gene
 
 \subsubsection{Pseudonáhodný generátor}
 
-Pseudonáhodný generátor jsme implementovali ve funkci \texttt{Random}, nejprve jsme se inspirovali z opory lineárním kongruentním generátorem (OPORA str. 18-20), avšak generoval příliš malá čísla i s různým nastavením parametrů, čímž nepříznivě ovlivnil výsledky simulací. Nakonec jsme jej implementovali za využití standardní C funkce \texttt{rand}.
+Pseudonáhodný generátor jsme implementovali ve funkci \texttt{Random}, nejprve jsme se inspirovali z opory lineárním kongruentním generátorem (\cite{opora} str. 18-20), avšak generoval příliš malá čísla i s různým nastavením parametrů, čímž nepříznivě ovlivnil výsledky simulací. Nakonec jsme jej implementovali za využití standardní C funkce \texttt{rand}.
 
 \subsubsection{Generátor s exponenciálním rozložením}
 
@@ -135,7 +148,7 @@ Generátor s exponenciálním rozložením je implementován ve funkci \texttt{E
 
 \subsubsection{Generátor s normálním rozložením}
 
-Funkce \texttt{Uniform} obsahuje generátor s normálním rozložením. Funkci jsme implmentovali dle principu (http://stackoverflow.com/questions/2325472/generate-random-numbers-following-a-normal-distribution-in-c-c).
+Funkce \texttt{Uniform} obsahuje generátor s normálním rozložením. Funkci jsme implementovali dle principu uvedeného na fóru~\cite{forum}.
 
 \subsubsection{Generátor s rovnoměrným rozložením}
 
@@ -149,9 +162,13 @@ Sledované položky skladu jsou celkový počet požadavků o zabrání skladu, 
 
 Funkce statistik se volají v metodách skladu v určitých případech. Pokud se do skladu vstoupí bez čekání ve frontě, zavolá se metoda \texttt{EnterNonqueued} ve které se zvýší počet požadavků o sklad a počet požadavků, které prošly bez fronty. Pokud se vstoupí do fronty, tak se uchová aktuální čas, kdy se vstupuje do fronty, zkontroluje se délka fronty pro uchování maximální délky fronty a zvýší se počet požadavků o sklad. V případě opouštění fronty se dopočítávají minimální, maximální čekací čas a počítá se celkový čas strávený ve frontě, který se při výpisu dále přepočítá na průměrný čas čekání ve frontě.
 
+\subsection{Překlad}
+
+Překlad probíhá pomocí našeho \texttt{Makefile} příkazem \texttt{make ucebna} nebo \texttt{make kravin}, případně lze přeložit oba příklady najednou pomocí \texttt{make run}. Výsledný překlad je následně umístěn ve složce \texttt{bin}.
+
 \section{Podstata simulačních experimentů a jejich průběh}
 
-Činnost simulátoru byla ověřena na dvou modelech z demonstračních cvičení, a to příklad učebna a kravín.
+Činnost simulátoru byla ověřena na dvou modelech z demonstračních cvičení, a to příklad Učebna a Kravín.
 
 \subsection{Postup experimentování} 
 
@@ -162,7 +179,6 @@ V jednotlivých modelech jsme nejprve nastavili hodnoty parametrů podle přísl
 Prováděli jsme experimenty nad oběma příklady (Učebna, Kravín) převzatými z demonstračních cvičení předmětu IMS.
 
 \subsubsection{ Kravín}
-%zvysit pocet aut/kapacitu auta, pocet dojicek
 
 První experiment je prováděn při nastavení hodnot shodným se zadáním. V kravíně je 100 krav, 5 dojiček, 1 nakládací rampa a 2 auta. Auto může naložit 20 konvic. Experiment je prováděn v simulačním čase 0 -- 200 hodin.
 
@@ -191,25 +207,90 @@ Z výsledku na obrázku~\ref{obr2} vidíme, že dojičky jsou lépe využity a �
 \label{obr3}
 \end{figure}
 
-Z výsledků na obrázku~\ref{obr3} vidíme, že auto přepravilo méně konvic než v předchozím případě, vyplatily by se dvě auta s dvěma rampama.
+Z výsledků na obrázku~\ref{obr3} vidíme, že auto přepravilo méně konvic než v předchozím případě, vyplatily by se minimálně dvě auta. 
+
+\subsubsection{Učebna}
+
+První experiment je prováděn při nastavení hodnot shodným se zadáním. Máme 10 počítačů, studenti přicházejí v intervalech daných exponenciálním rozložením se středem 10 min. Pokud je počítač volný, obsadí ho a pracují exp(100 min), jinak se 60\% okamžitě postaví do fronty, zbytek odchází. Po 30-60 minutách se však 20\% vrací. Experiment je prováděn v simulačním čase 0 -- 1000000 (stejně jako v demonstračních cvičeních)..
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{ucebna1.jpg}
+\caption{Experiment s nastavením dle zadání}
+\label{obr4}
+\end{figure}
+
+Z výsledku na obrázku~\ref{obr4} vidíme, že studenti na počítač průměrně čekali 27 min a nejdéle 259 min. Při zvýšení počtu počítačů na 20 se maximální délka výrazně sníží a průměrný čekací čas je také rozumnější, jak vidíme na obrázku~\ref{obr5}.
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{ucebna1.jpg}
+\caption{Experiment se zvýšeným počtem počítačů na 20}
+\label{obr4}
+\end{figure}
+
+Při počtu 25 počítačů se již netvoří fronty vůbec a studenti mohou pracovat bez čekání, jak vidíme na obrázku~\ref{obr5}.
+
+\begin{figure}[!h] 
+ 	\centering
+	 \includegraphics[]{ucebna3.jpg} 
+\caption{Experiment se zvýšeným počtem počítačů na 25}
+\label{obr5}
+\end{figure}
+
+\subsubsection{Závěry experimentů}
+
+Bylo provedeno několik experimentů v různých situacích s rozličným nastavením vstupních parametrů. V průběhu experimentování s Kravínem byla odstraněna chyba v modelu, kdy auto bylo připraveno na rampě,  avšak konvice do něj nebyly nakládány.  Na základě experimentů jsme zjistili, že Kravín by fungoval i v případě 3 dojiček a 1 auta.
+
+V případě Učebny by byla potřeba alespoň 20 počítačů, aby studenti nečekali dlouhé fronty a nejlépe 25, aby mohli pracovat ihned.
 
 %udelat referencni SIMLIB printscreen +ucebna+teorie
 
 \section{Shrnutí simulačních experimentů a závěr}
-U statistik se případné další požadavky sledovaných hodnot dají snadno doplnit, my jsme implementovali pouze základní z nich, které jsme shledali důležitými.
+
+V rámci projektu vznikl diskrétní simulátor, který byl implementován v C++. Po spuštění vypisujeme statistiky. Implementovali jsme pouze základní z nich, které jsme shledali důležitými, případné další požadavky sledovaných hodnot se dají snadno doplnit.
+Ve statistikách je mimo jiné i průměrná délka fronty, která se vždy počítá od času 0, i když čas simulace začíná v jiném čase.
+
+Při experimentování s modelem kravín se naše výsledky oproti výsledkům modelů s knihovnou SIMLIB lišily zhruba o XXX\%. V případě příkladu učebna přibližně o XX\%, jak vidíme v tabulkách~\ref{srovnani} a ~\ref{srovnani2}.
+
+%přepsat nějaké hodnoty do tabulky (např.: sledovaná hodnota (popis) - referenční hodnota - odchylka
+
+\begin{table}[ht]
+\caption{Náš simulátor vs. SIMLIB, Kravín se 3 dojičkami, 1 rampou, 2 auty}
+\centering
+\begin{tabular}{c c c c c}
+\hline\hline
+& Sledovaná hodnota & náš simulátor & SIMLIB & odchylka\\[0.5ex]
+\hline
+Rampa & min. čas&  60,453 & 38,4755&\\
+ & max. čas & 238,830 & 223,847&\\
+ & průměr. čas & 131,109 & 119,114&\\
+Dojičky & min. čas & 0,008 & 0,027&\\
+ & max. čas & 15,049 & 9,752&\\
+ & průměr. čas & 4,312 & 2,878&\\[1ex]
+\hline
+\label{srovnani}
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Náš simulátor vs. SIMLIB, Učebna s 10 počítači, studenti exp(10 min)}
+\centering
+\begin{tabular}{c c c c c}
+\hline\hline
+& Sledovaná hodnota & náš simulátor & SIMLIB & odchylka\\[0.5ex]
+\hline
+Počítače & min. čas&  0,008 & 0,003&\\
+ & max. čas & 259,938 & 198,401&\\
+ & průměr. čas & 27,608 & 28,289&\\[1ex]
+\hline
+\label{srovnani2}
+\end{tabular}
+\end{table}
 
 \newpage
 
 \bibliographystyle{myplain}
 \bibliography{bibliography}
-
-%\section*{Použitá literatura} \label{literatura}
-%\begin{itemize}
-%\item [1] Karen R. Sollins, “The TFTP Protocol” IEN 133, 29.1.1980. [Online]. Dostupné z %\url{http://www.postel.org/ien/txt/ien133.txt}
-%\item [2] Karen R. Sollins, “The TFTP Protocol (revision 2)”RFC1350, 29.7.1992. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc1350}
-%\item [3] G. Malkin, Bay Networks, A. Harkin, “TFTP Option Extension” RFC2347, 1998. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc2347}
-%\item [4] G. Malkin, Bay Networks, A. Harkin, “TFTP Blocksize Option” RFC2348, 1998. [Online]. Dostupné z %\url{http://tools.ietf.org/html/rfc2348}
-%\item [5] G. Malkin, Bay Networks, A. Harkin, “TFTP Timeout Interval and Transfer Size Options” RFC2349, 1998. [Online]. %Dostupné z \url{http://tools.ietf.org/html/rfc2349}
-%\end{itemize}
 
 \end{document}

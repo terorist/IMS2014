@@ -7,6 +7,13 @@
   \url{http://www.simulace.info/index.php/Discrete_event_simulation/cs}.
 \newblock [cit. 29.11.2014].
 
+\bibitem{forum}
+\emph{Generate random numbers following a normal distribution in C/C++}.
+\newblock [online], 2014.
+\newblock URL
+  \url{http://stackoverflow.com/questions/2325472/generate-random-numbers-following-a-normal-distribution-in-c-c}.
+\newblock [cit. 6.12.2014].
+
 \bibitem{demo1}
 Hrub\'{y} M.
 \newblock \emph{Demonstra\v{c}n\'{i} cvi\v{c}en\'{i} IMS 1}.
@@ -22,6 +29,14 @@ Hrub\'{y} M.
 \newblock URL
   \url{http://perchta.fit.vutbr.cz:8000/vyuka-ims/uploads/1/ims-simlib-dema.tar.gz}.
 \newblock [cit. 27.11.2014].
+
+\bibitem{opora}
+Peringer P.
+\newblock \emph{Modelov\'{a}n\'{i} a simulace, studijn\'{i} opora}.
+\newblock [online], 2014.
+\newblock URL
+  \url{https://wis.fit.vutbr.cz/FIT/st/course-files-st.php/course/IMS-IT/lectures/IMS.pdf?cid=9983}.
+\newblock [cit. 2.12.2014].
 
 \bibitem{peringer}
 Peringer P.
