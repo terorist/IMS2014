@@ -4,7 +4,7 @@ kravin: bin/kravin
 ucebna: bin/ucebna
 	echo "Build complete"
 
-run:
+run: kravin ucebna
 	bin/kravin
 	bin/ucebna
 
