@@ -92,7 +92,7 @@ void CekaniNaKonvici::Behavior() {
   }
   else {
     //konvice->Enter(this);
-    konvice->Enter(new CekaniNaKonvici);
+    konvice->Enter(new CekaniNaKonvici); //Krkolomna konstrukce, ale je potreba cekat na konvici, ktera tam poprve neni a naklada vzdy jenom jedno auto (pro vice ramp by se musel model upravit)
   }
 }
 
